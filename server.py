@@ -1,6 +1,12 @@
 import json
 
-ok_response_obj = [{ 'verdict': 'Accepted', 'time': 0, 'memory': 250 }] * 20
+ok_response_obj = {
+    'points': 100,
+    'verdict': 'Accepted',
+    'time': 0,
+    'memory': 250,
+    'tests': [{ 'verdict': 'Accepted', 'points': 5, 'time': 0, 'memory': 250 }] * 20
+}
 ok_response = bytes( json.dumps( ok_response_obj ), "utf-8" )
 
 def app( environ, start_response ):
